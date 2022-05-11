@@ -1,0 +1,24 @@
+Bitno: podaci, pitanja na koja odgovaramo (projektom), tablični prikaz (grafovi..)
+
+Vrste grafova: https://d3-graph-gallery.com/
+
+Podaci:
+https://worldpopulationreview.com/country-rankings/military-size-by-country
+https://www.statista.com/chart/20418/most-powerful-militaries/
+https://militarywatchmagazine.com/forceapp/countries
+https://ecfr.eu/special/power-atlas/military/
+https://public.opendatasoft.com/explore/dataset/military-bases/table/?refine.country=United+States
+https://data.world/dcopendata/military-bases
+https://data.worldbank.org/indicator/MS.MIL.TOTL.P1?end=2019&start=2019&view=bar
+https://natolibguides.info/library/find/databases#dmr
+https://www.globalfirepower.com/nato-projected-firepower.php
+
+Ideja: Prikaz vojne sile različitih država (njih 15ak većih)
+
+Grafovi:
+Broj aktivnih vojnika
+Broj i vrste vojnog oružja svake države 
+Potrošnja sredstava (novca) na vojsku (tko troši najviše)
+Godine (dob) aktivnih vojnika
+Usporedba dvoje država
+

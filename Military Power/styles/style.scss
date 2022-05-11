@@ -1,0 +1,21 @@
+@import 'variables.scss';
+
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.title {
+    margin-left: 150px;
+}
+
+.map-container {
+    position: absolute;
+    top: 80px;
+    left: 150px;
+
+    & #map {
+        border: 1px solid $black-color;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+}
