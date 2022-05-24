@@ -1,5 +1,6 @@
 body {
   font-family: 'Work Sans', sans-serif;
+  background-color: #F7F9FB;
 }
 
 .title {
@@ -16,5 +17,45 @@ body {
   border: 1px solid #000000;
   border-radius: 5px;
   margin: 0 auto;
+}
+
+.map-container #map:hover {
+  cursor: pointer;
+}
+
+.histogram-container #active-personnel {
+  position: absolute;
+  top: 950px;
+  left: 150px;
+}
+
+.histogram-container #air-weapons {
+  position: absolute;
+  top: 130px;
+  left: 1280px;
+}
+
+.histogram-container #ground-weapons {
+  position: absolute;
+  top: 1030px;
+  left: 1280px;
+}
+
+.histogram-container #navy-weapons {
+  position: absolute;
+  top: 580px;
+  left: 1280px;
+}
+
+.histogram-container #money-expense {
+  position: absolute;
+  top: 1030px;
+  left: 700px;
+}
+
+.histogram-container .country-title {
+  position: absolute;
+  top: 60px;
+  left: 1320px;
 }
 /*# sourceMappingURL=style.css.map */

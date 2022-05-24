@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Work Sans', sans-serif;
+    background-color: $background-color;
 }
 
 .title {
@@ -17,5 +18,47 @@ body {
         border: 1px solid $black-color;
         border-radius: 5px;
         margin: 0 auto;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.histogram-container {
+    & #active-personnel {
+        position: absolute;
+        top: 950px;
+        left: 150px;
+    }
+
+    & #air-weapons {
+        position: absolute;
+        top: 130px;
+        left: 1280px;
+    }
+
+    & #ground-weapons {
+        position: absolute;
+        top: 1030px;
+        left: 1280px;
+    }
+
+    & #navy-weapons {
+        position: absolute;
+        top: 580px;
+        left: 1280px;
+    }
+
+    & #money-expense {
+        position: absolute;
+        top: 1030px;
+        left: 700px;
+    }
+
+    & .country-title {
+        position: absolute;
+        top: 60px;
+        left: 1320px;
     }
 }

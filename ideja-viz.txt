@@ -12,6 +12,8 @@ https://data.world/dcopendata/military-bases
 https://data.worldbank.org/indicator/MS.MIL.TOTL.P1?end=2019&start=2019&view=bar
 https://natolibguides.info/library/find/databases#dmr
 https://www.globalfirepower.com/nato-projected-firepower.php
+https://ourworldindata.org/military-spending
+https://www.macrotrends.net/countries/USA/united-states/military-army-size
 
 Ideja: Prikaz vojne sile različitih država (njih 15ak većih)
 
