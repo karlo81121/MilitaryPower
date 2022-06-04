@@ -39,14 +39,6 @@ function ready(error, topo) {
       .style("stroke", "black");
   };
 
-  let mouseClick = function(){
-    d3.select(".Country")
-      .transition()
-      .duration(200)
-      .style("opacity", 0.5)
-      .style("stroke", "black");
-  }
-
   let mouseLeave = function (d) {
     d3.selectAll(".Country").transition().duration(200).style("opacity", 0.8);
     d3.select(this).transition().duration(200).style("stroke", "black");
@@ -73,14 +65,14 @@ function ready(error, topo) {
       refreshButton.style.color = "#FFFFFF";
     };
     refreshButton.style.position = "absolute";
-    refreshButton.style.top = '35px';
-    refreshButton.style.left = '550px';
+    refreshButton.style.top = "35px";
+    refreshButton.style.left = "550px";
     const buttonContainer = document.querySelector("#refresh-button");
     buttonContainer.append(refreshButton);
   };
 
   const refreshButton = document.querySelector("#refresh-button");
-  refreshButton.addEventListener("click", function() {
+  refreshButton.addEventListener("click", function () {
     countryClicked = 0;
     window.location.reload();
   });
@@ -102,7 +94,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("brazilActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -178,7 +169,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("BrazilAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -239,7 +229,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("brazilGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -300,7 +289,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("brazilNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -368,7 +356,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("brazilMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -415,7 +402,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Brazil Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -444,7 +431,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("chinaActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -520,7 +506,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("chinaAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -581,7 +566,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("chinaGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -642,7 +626,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("chinaNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -710,7 +693,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("chinaMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -757,7 +739,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "China Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -786,7 +768,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("USAactivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -862,7 +843,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("USAairWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -923,7 +903,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("USAgroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -984,7 +963,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("USAnavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1052,7 +1030,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("USAmoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1099,7 +1076,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "USA Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -1128,7 +1105,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("germanyActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1204,7 +1180,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("germanyAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1265,7 +1240,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("germanyGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1326,7 +1300,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("germanyNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1394,7 +1367,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("germanyMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1441,7 +1413,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Germany Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -1470,7 +1442,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("spainActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1546,7 +1517,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("spainAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1607,7 +1577,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("spainGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1668,7 +1637,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("spainNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1736,7 +1704,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("spainMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1783,7 +1750,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Spain Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -1812,7 +1779,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("franceActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1888,7 +1854,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("franceAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -1949,7 +1914,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("franceGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2010,7 +1974,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("franceNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2078,7 +2041,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("franceMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2125,7 +2087,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "France Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -2154,7 +2116,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("englandActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2230,7 +2191,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("englandAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2291,7 +2251,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("englandGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2352,7 +2311,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("englandNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2420,7 +2378,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("englandMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2467,7 +2424,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "England Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -2496,7 +2453,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("indiaActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2572,7 +2528,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("indiaAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2633,7 +2588,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("indiaGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2694,7 +2648,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("indiaNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2762,7 +2715,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("indiaMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2809,7 +2761,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "India Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -2838,7 +2790,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("northKoreaActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2914,7 +2865,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("northKoreaAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -2975,7 +2925,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("northKoreaGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3036,7 +2985,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("northKoreaNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3104,7 +3052,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("northKoreaMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3151,7 +3098,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "North Korea Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -3180,7 +3127,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("russiaActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3256,7 +3202,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("russiaAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3317,7 +3262,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("russiaGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3378,7 +3322,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("russiaNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3446,7 +3389,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("russiaMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3493,7 +3435,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Russia Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -3522,7 +3464,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("swedenActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3598,7 +3539,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("swedenAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3659,7 +3599,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("swedenGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3720,7 +3659,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("swedenNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3788,7 +3726,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("swedenMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3835,7 +3772,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Sweden Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -3864,7 +3801,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("turkeyActivePersonnel.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -3940,7 +3876,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("turkeyAirWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -4001,7 +3936,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("turkeyGroundWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -4062,7 +3996,6 @@ function ready(error, topo) {
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     d3.csv("turkeyNavyWeapons.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -4130,7 +4063,6 @@ function ready(error, topo) {
       .text("Money Expense (Billions)");
 
     d3.csv("turkeyMoneyExpense.csv", function (data) {
-
       var x = d3
         .scaleBand()
         .range([0, width])
@@ -4177,7 +4109,7 @@ function ready(error, topo) {
     countryTitle.style.color = "#687864";
     countryTitle.innerText = "Turkey Military Power";
     countryTitle.style.position = "absolute";
-    countryTitle.style.top = '15px';
+    countryTitle.style.top = "15px";
     countryTitle.style.left = "1120px";
     container.append(countryTitle);
 
@@ -4193,7 +4125,6 @@ function ready(error, topo) {
 
   let displayCountryData = function (d, i) {
     if (i == 22 && countryClicked == 0) {
-      mouseClick();
       displayBrazilData();
       countryClicked = 1;
     }
