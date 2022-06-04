@@ -10,6 +10,7 @@ var projection = d3
   .translate([width / 2, height / 1.5]);
 
 var data = d3.map();
+//domena boja za mapu svijeta
 var colorScale = d3
   .scaleThreshold()
   .domain([10000, 100000, 1000000, 3000000, 10000000, 30000000])
@@ -18,6 +19,7 @@ var colorScale = d3
 d3.queue()
   .defer(
     d3.json,
+    //učitavanje mape svijeta (JSON + CSV)
     "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"
   )
   .defer(
@@ -30,6 +32,7 @@ d3.queue()
   .await(ready);
 
 function ready(error, topo) {
+  //funkcije za hover efekt na mapi svijeta
   let mouseOver = function (d) {
     d3.selectAll(".Country").transition().duration(200).style("opacity", 0.5);
     d3.select(this)
@@ -46,6 +49,7 @@ function ready(error, topo) {
 
   let countryClicked = 0;
 
+  //gumb koji se koristi za promjenu države
   let addRefreshButton = function () {
     const refreshButton = document.createElement("button");
     refreshButton.classList.add("refresh-btn");
@@ -80,6 +84,7 @@ function ready(error, topo) {
   /*************************************************************************/
   //BRAZIL
 
+  //funkcija za kreiranje grafa aktivnih vojnika Brazila
   let displayBrazilActivePersonnel = function () {
     var margin = { top: 20, right: 30, bottom: 90, left: 100 },
       width = 360 - margin.left - margin.right,
@@ -93,6 +98,7 @@ function ready(error, topo) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    //učitavanje CSV dokumenta 
     d3.csv("brazilActivePersonnel.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -155,6 +161,7 @@ function ready(error, topo) {
     });
   };
 
+  //funkcija za kreiranje grafa zračnog oružja Brazila 
   let displayBrazilAirWeapons = function () {
     var margin = { top: 30, right: 30, bottom: 70, left: 60 },
       width = 360 - margin.left - margin.right,
@@ -168,6 +175,7 @@ function ready(error, topo) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    //učitvanje CSV dokumenta
     d3.csv("BrazilAirWeapons.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -215,6 +223,7 @@ function ready(error, topo) {
     });
   };
 
+  //funkcija za kreiranje grafa kopnenog oružja Brazila
   let displayBrazilGroundWeapons = function () {
     var margin = { top: 30, right: 30, bottom: 70, left: 60 },
       width = 360 - margin.left - margin.right,
@@ -228,6 +237,7 @@ function ready(error, topo) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    //učitavanje CSV dokumenta
     d3.csv("brazilGroundWeapons.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -275,6 +285,7 @@ function ready(error, topo) {
     });
   };
 
+  //funkcija za kreiranje grafa oružja mornarice Brazila
   let displayBrazilNavyWeapons = function () {
     var margin = { top: 30, right: 30, bottom: 70, left: 60 },
       width = 360 - margin.left - margin.right,
@@ -288,6 +299,7 @@ function ready(error, topo) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    //učitavanje CSV dokumenta
     d3.csv("brazilNavyWeapons.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -335,6 +347,7 @@ function ready(error, topo) {
     });
   };
 
+  //funkcija za kreiranje grafa potrošnje kapitala Brazila
   let displayBrazilMoneyExpense = function () {
     var margin = { top: 30, right: 30, bottom: 70, left: 60 },
       width = 360 - margin.left - margin.right,
@@ -355,6 +368,7 @@ function ready(error, topo) {
       .style("font-size", "16px")
       .text("Money Expense (Billions)");
 
+    //učitavanje CSV dokumenta
     d3.csv("brazilMoneyExpense.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -395,6 +409,7 @@ function ready(error, topo) {
     });
   };
 
+  //funkcija za kreiranje svih 5 grafova Brazila
   let displayBrazilData = function () {
     const container = document.querySelector(".histogram-container");
     const countryTitle = document.createElement("h1");
