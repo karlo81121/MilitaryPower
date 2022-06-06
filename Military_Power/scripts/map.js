@@ -82,6 +82,52 @@ function ready(error, topo) {
   });
 
   /*************************************************************************/
+
+  let addMapLegend = function () {
+
+    var svg = d3.select("#legend");
+
+    var keys = ["Strong military power", "", "", "", "Weak military power"];
+    var blackColor = "#000000";
+
+    var colors = ["rgb(0, 88, 36)", "rgb(0, 88, 36)", "rgb(35, 139, 69)", "rgb(65, 174, 118)", "rgb(204, 236, 230)"];
+
+    var size = 25;
+    svg
+      .selectAll("mydots")
+      .data(keys)
+      .enter()
+      .append("rect")
+      .attr("x", 100)
+      .attr("y", function (d, i) {
+        return 100 + i * (size + 5);
+      }) 
+      .attr("width", size)
+      .attr("height", size)
+      .style("fill", function (d, i) {
+        return colors[i];
+      });
+
+    svg
+      .selectAll("mylabels")
+      .data(keys)
+      .enter()
+      .append("text")
+      .attr("x", 100 + size * 1.2)
+      .attr("y", function (d, i) {
+        return 100 + i * (size + 5) + size / 2;
+      }) 
+      .style("fill", function () {
+        return blackColor;
+      })
+      .text(function (d) {
+        return d;
+      })
+      .attr("text-anchor", "left")
+      .style("alignment-baseline", "middle");
+  };
+
+  /*************************************************************************/
   //BRAZIL
 
   //funkcija za kreiranje grafa aktivnih vojnika Brazila
@@ -98,7 +144,7 @@ function ready(error, topo) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    //učitavanje CSV dokumenta 
+    //učitavanje CSV dokumenta
     d3.csv("brazilActivePersonnel.csv", function (data) {
       var x = d3
         .scaleBand()
@@ -114,6 +160,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -161,7 +209,7 @@ function ready(error, topo) {
     });
   };
 
-  //funkcija za kreiranje grafa zračnog oružja Brazila 
+  //funkcija za kreiranje grafa zračnog oružja Brazila
   let displayBrazilAirWeapons = function () {
     var margin = { top: 30, right: 30, bottom: 70, left: 60 },
       width = 360 - margin.left - margin.right,
@@ -191,6 +239,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -253,6 +303,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -315,6 +367,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -384,6 +438,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -427,6 +483,7 @@ function ready(error, topo) {
     displayBrazilNavyWeapons();
     displayBrazilMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /*************************************************************************/
@@ -460,6 +517,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -535,6 +594,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -595,6 +656,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -655,6 +718,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -722,6 +787,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -764,6 +831,7 @@ function ready(error, topo) {
     displayChinaNavyWeapons();
     displayChinaMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /*************************************************************************/
@@ -797,6 +865,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -872,6 +942,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -932,6 +1004,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -992,6 +1066,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1059,6 +1135,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1101,6 +1179,7 @@ function ready(error, topo) {
     displayUSANavyWeapons();
     displayUSAMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /*************************************************************************/
@@ -1134,6 +1213,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1209,6 +1290,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1269,6 +1352,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1329,6 +1414,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1396,6 +1483,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1438,6 +1527,7 @@ function ready(error, topo) {
     displayGermanyNavyWeapons();
     displayGermanyMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /************************************************************************/
@@ -1471,6 +1561,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1546,6 +1638,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1606,6 +1700,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1666,6 +1762,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1733,6 +1831,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1775,6 +1875,7 @@ function ready(error, topo) {
     displaySpainNavyWeapons();
     displaySpainMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /************************************************************************/
@@ -1808,6 +1909,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1883,6 +1986,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -1943,6 +2048,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2003,6 +2110,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2070,6 +2179,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2112,6 +2223,7 @@ function ready(error, topo) {
     displayFranceNavyWeapons();
     displayFranceMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /************************************************************************/
@@ -2145,6 +2257,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2220,6 +2334,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2280,6 +2396,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2340,6 +2458,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2407,6 +2527,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2449,6 +2571,7 @@ function ready(error, topo) {
     displayEnglandNavyWeapons();
     displayEnglandMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /***********************************************************************/
@@ -2482,6 +2605,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2557,6 +2682,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2617,6 +2744,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2677,6 +2806,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2744,6 +2875,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2786,6 +2919,7 @@ function ready(error, topo) {
     displayIndiaNavyWeapons();
     displayIndiaMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /**********************************************************************/
@@ -2819,6 +2953,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2894,6 +3030,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -2954,6 +3092,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3014,6 +3154,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3081,6 +3223,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3123,6 +3267,7 @@ function ready(error, topo) {
     displayNorthKoreaNavyWeapons();
     displayNorthKoreaMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /**********************************************************************/
@@ -3156,6 +3301,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3231,6 +3378,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3291,6 +3440,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3351,6 +3502,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3418,6 +3571,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3460,6 +3615,7 @@ function ready(error, topo) {
     displayRussiaNavyWeapons();
     displayRussiaMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /**********************************************************************/
@@ -3493,6 +3649,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3568,6 +3726,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3628,6 +3788,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3688,6 +3850,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3755,6 +3919,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3797,6 +3963,7 @@ function ready(error, topo) {
     displaySwedenNavyWeapons();
     displaySwedenMoneyExpense();
     addRefreshButton();
+    addMapLegend();
   };
 
   /**********************************************************************/
@@ -3830,6 +3997,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3905,6 +4074,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -3965,6 +4136,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -4025,6 +4198,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -4092,6 +4267,8 @@ function ready(error, topo) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
+        .transition()
+        .duration(500)
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
@@ -4134,6 +4311,8 @@ function ready(error, topo) {
     displayTurkeyNavyWeapons();
     displayTurkeyMoneyExpense();
     addRefreshButton();
+    addMapLegend();
+    addMapLegend();
   };
 
   /**********************************************************************/

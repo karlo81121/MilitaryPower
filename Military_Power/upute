@@ -1,4 +1,6 @@
 Kako bi se ovaj projekt pravilno prikazao u web pregledniku, 
-potrebno je pokrenuti Index.html dokument pomoću live server 
+potrebno je otvoriti Visual Studio Code te zatim odabrati File->Open Folder
+te odabrati datoteku pod nazivom MilitaryPower ( Military_Power).
+Nakon toga potrebno je pokrenuti Index.html dokument pomoću live server 
 ekstenzije unutar programa Visual Studio Code ili korištenjem 
 nekih drugih sličnih tehnologija.

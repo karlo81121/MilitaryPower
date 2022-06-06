@@ -59,4 +59,20 @@ body {
   top: 40px;
   left: 1320px;
 }
+
+.description {
+  position: absolute;
+  top: 850px;
+  left: 55px;
+}
+
+#legend {
+  position: absolute;
+  top: 700px;
+  left: 600px;
+}
+
+#least, #highest {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
